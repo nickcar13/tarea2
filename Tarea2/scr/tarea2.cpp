@@ -3,7 +3,7 @@
 #include <GL/glut.h>
 #include <iostream>
 #include <math.h>
-
+//pyo el que lea
 float WIDTH = 500, HEIGHT = 500;
 static int RESOLUTIONX = 1366, RESOLUTIONY = 768;
 float colors[3] = {};
