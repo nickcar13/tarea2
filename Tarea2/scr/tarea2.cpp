@@ -1,4 +1,5 @@
-﻿#define _USE_MATH_DEFINES
+﻿/*Codigo creado por Nicolas Castañeda y Margarita Martinez*/
+#define _USE_MATH_DEFINES
 
 #include <GL/glut.h>
 #include <iostream>
