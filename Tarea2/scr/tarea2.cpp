@@ -5,7 +5,7 @@
 #include <math.h>
 //Declaracion de variables globales
 
-float WIDTH = 500, HEIGHT = 300;
+float WIDTH = 1000, HEIGHT = 600;
 static int RESOLUTIONX = 1366, RESOLUTIONY = 768;
 float colors[3] = {};
 
