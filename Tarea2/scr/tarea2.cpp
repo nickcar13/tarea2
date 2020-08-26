@@ -103,14 +103,14 @@ void dibujarFuncion(float inicio, float final, int pixelSize, float R, float G, 
 }
 
 void huevito() {
-	dibujarFuncion(-500, 500, 5, 94, 96, 206, 1); 
-	dibujarFuncion(-500, 500, 5, 94, 96, 206, 2); 
-	dibujarFuncion(-500, 500, 5, 94, 96, 206, 3);
+	dibujarFuncion(-10, 10, 5, 216, 140, 154, 1);
+	dibujarFuncion(-500, 500, 5, 241, 196, 83, 2);
+	dibujarFuncion(-500, 500, 5, 229, 107, 111, 3);
 }
 
 void corazon() {
-	dibujarFuncion(-500, 500, 5, 94, 96, 206, 4); 
-	dibujarFuncion(-500, 500, 5, 94, 96, 206, 5);
+	dibujarFuncion(-500, 500, 4, 196, 40, 71, 4);
+	dibujarFuncion(-500, 500, 4, 196, 40, 71, 5);
 }
 
 //Definicion de la zona que se ve de la grafica dejando 0,0 en el centro
@@ -136,7 +136,7 @@ int main(int arg, char *argv[])
 
 	//Inicializacion de las funciones llamadas
 	definirVista(ejeX, ejeY); //Campo de vision
-	pantalla(72, 191, 227); //pantalla con su color
+	pantalla(255, 255, 234); //pantalla con su color
 	ejes(17, 19, 68,ejeX,ejeY); //Ejes longitud y color
 	huevito(); //funcion con su rango de vision
 	corazon();
