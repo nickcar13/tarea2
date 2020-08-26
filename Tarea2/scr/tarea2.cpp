@@ -5,7 +5,7 @@
 #include <math.h>
 //Declaracion de variables globales
 
-float WIDTH = 500, HEIGHT = 500;
+float WIDTH = 500, HEIGHT = 300;
 static int RESOLUTIONX = 1366, RESOLUTIONY = 768;
 float colors[3] = {};
 
@@ -53,20 +53,64 @@ void ejes(float red, float green, float blue, float ejeX, float ejeY)
 }
 
 //Graficacion de la funcion en el rango indicado
-void dibujarFuncion(float inicio, float final)
+void dibujarFuncion(float inicio, float final, int pixelSize, float R, float G, float B, int grafica)
 {
+	glColor3fv(RGBToFloat(R,G,B));
 
 	//tamaño del punto usado en px
-	glPointSize(5);
+	glPointSize(pixelSize);
 	float y;
 
 	glBegin(GL_POINTS);
-	for (float x = inicio; x < final; x += 0.1)
-	{
-		y = sin(x * M_PI / 180);
-		glVertex2d(x, y);
+	switch (grafica) {
+	case 1:
+		for (float x = inicio; x < final; x += 0.1)
+		{
+			y = cos(x);
+			glVertex2d(x, y);
+		}
+		break;
+	case 2:
+		for (float x = inicio; x < final; x+= 0.01)
+		{
+			y = sqrt(25-pow(x,2));
+			glVertex2d(x, y);
+		}
+		break;
+	case 3:
+		for (float x = inicio; x < final; x += 0.01)
+		{
+			y = -sqrt(100-(2 * pow(x, 2)));
+			glVertex2d(x, y);
+		}
+		break;
+	case 4:
+		for (float x = inicio; x < final; x += 0.01)
+		{
+			y = (sqrt(1 - pow((abs(x)-1),2) ))+10;
+			glVertex2d(x, y);
+		}
+		break;
+	case 5:
+		for (float x = inicio; x < final; x += 0.01)
+		{
+			y = (-2.5*sqrt(1 - (abs(x)/ 2))) +10 ;
+			glVertex2d(x, y);
+		}
+		break;
 	}
 	glEnd();
+}
+
+void huevito() {
+	dibujarFuncion(-500, 500, 5, 94, 96, 206, 1); 
+	dibujarFuncion(-500, 500, 5, 94, 96, 206, 2); 
+	dibujarFuncion(-500, 500, 5, 94, 96, 206, 3);
+}
+
+void corazon() {
+	dibujarFuncion(-500, 500, 5, 94, 96, 206, 4); 
+	dibujarFuncion(-500, 500, 5, 94, 96, 206, 5);
 }
 
 //Definicion de la zona que se ve de la grafica dejando 0,0 en el centro
@@ -78,8 +122,7 @@ void definirVista(float ejeX, float ejeY)
 int main(int arg, char *argv[])
 {
 	//Constantes usadas
-	float ejeY = 1.5, ejeX = 500;
-
+	float ejeY = 15, ejeX = 25;
 	float posX = ((RESOLUTIONX / 2) - (WIDTH / 2));
 	float posy = ((RESOLUTIONY / 2) - (HEIGHT / 2) - 40);
 
@@ -93,9 +136,10 @@ int main(int arg, char *argv[])
 
 	//Inicializacion de las funciones llamadas
 	definirVista(ejeX, ejeY); //Campo de vision
-	pantalla(84, 84, 84); //pantalla con su color
-	ejes(233, 255, 249,ejeX,ejeY); //Ejes longitud y color
-	dibujarFuncion(-500, 500); //funcion con su rango de vision
+	pantalla(72, 191, 227); //pantalla con su color
+	ejes(17, 19, 68,ejeX,ejeY); //Ejes longitud y color
+	huevito(); //funcion con su rango de vision
+	corazon();
 	glutMainLoop(); //Loop iniciado del main para glut  
 	return 0;
 }
