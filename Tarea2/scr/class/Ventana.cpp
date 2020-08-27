@@ -1,5 +1,8 @@
 #include "Ventana.h"
+#include "Colores.h"
 #include <GL/glut.h>
+
+Colores color;
 
 Ventana::Ventana(int arg, char argv[])
 {
@@ -34,6 +37,16 @@ void Ventana::ciclo()
 {
 	glutMainLoop();
 }
+
+void Ventana::configVentana(float red, float green, float blue)
+{
+	float *ColorFondo = color.RGBToFloat(red, green, blue);
+	glClearColor(*ColorFondo, *(ColorFondo + 1), *(ColorFondo + 2), 1);
+	
+	glClear(GL_COLOR_BUFFER_BIT);
+}
+
+
 
 float Ventana::getWidth()
 {

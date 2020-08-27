@@ -6,8 +6,9 @@ public:
 	~Ventana();
 	void bufferSimple(char const* name, void (*funcion)(), float width, float heigh);
 	void bufferSimple(char const* name, void (*funcion)());
-	//void bufferDoble();s
+	//void bufferDoble();
 	void ciclo();
+	void configVentana(float red, float green, float blue);
 	float getWidth();
 	float getHeight();
 	void setWidth(float width);

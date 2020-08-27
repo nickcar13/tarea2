@@ -159,10 +159,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="scr\class\Colores.cpp" />
+    <ClCompile Include="scr\class\funcionMatematica.cpp" />
     <ClCompile Include="scr\tarea2.cpp" />
     <ClCompile Include="scr\class\Ventana.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="scr\class\Colores.h" />
+    <ClInclude Include="scr\class\funcionMatematica.h" />
     <ClInclude Include="scr\class\Ventana.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

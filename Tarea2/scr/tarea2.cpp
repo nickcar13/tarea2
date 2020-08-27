@@ -28,17 +28,6 @@ float *RGBToFloat(float red, float green, float blue)
 	return (colors);
 }
 
-void pantalla(float red, float green, float blue)
-{
-	float *ColorFondo = RGBToFloat(red, green, blue);
-	//Configuracion del color de borrado o color de fondo
-	glClearColor(*ColorFondo, *(ColorFondo + 1), *(ColorFondo + 2), 1);
-	//Organizacion de los ejes en Funcion de una vista ortogonal
-
-	//limpieza inicial de la pantalla con el color predefinido anteriormente
-	glClear(GL_COLOR_BUFFER_BIT);
-}
-
 //graficacion de los ejes color y longitud
 void ejes(float red, float green, float blue, float ejeX, float ejeY)
 {
@@ -127,10 +116,9 @@ int main(int arg, char *argv[])
 	Ventana ventana1(arg, *argv);
 	ventana1.bufferSimple("Hello",Display);
 
-
 	//Inicializacion de las funciones llamadas
 	definirVista(ejeX, ejeY); //Campo de vision
-	pantalla(255, 255, 234); //pantalla con su color
+	ventana1.configVentana(255, 255, 234); //pantalla con su color
 	ejes(17, 19, 68,ejeX,ejeY); //Ejes longitud y color
 	huevito(); //funcion con su rango de vision
 	corazon();
