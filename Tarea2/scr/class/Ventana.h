@@ -6,7 +6,8 @@ public:
 	~Ventana();
 	void bufferSimple(char const* name, void (*funcion)(), float width, float heigh);
 	void bufferSimple(char const* name, void (*funcion)());
-	//void bufferDoble();
+	//TODO funcion para rango de vision ortogonal
+	//TODO void bufferDoble();
 	void ciclo();
 	void configVentana(float red, float green, float blue);
 	float getWidth();
