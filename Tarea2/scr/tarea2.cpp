@@ -2,14 +2,9 @@
 #define _USE_MATH_DEFINES
 
 #include <GL/glut.h>
-#include <iostream>
-#include <math.h>
-
 #include "class/Ventana.h"
 #include "class/funcionMatematica.h"
 
-//Declaracion de variables globales
-float colors[3] = {};
 
 void Display()
 {
